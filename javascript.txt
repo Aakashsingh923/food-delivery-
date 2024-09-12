@@ -1,0 +1,26 @@
+const cartItems = [];
+
+function addToCart(item) {
+    cartItems.push(item);
+    updateCart();
+}
+
+function updateCart() {
+    const cartList = document.getElementById('cart-items');
+    cartList.innerHTML = '';
+    cartItems.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        cartList.appendChild(li);
+    });
+}
+
+function checkout() {
+    alert('Checkout functionality is not implemented yet.');
+}
+
+// Optional: Add form submission handling
+document.getElementById('checkout-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Order placed successfully!');
+});
